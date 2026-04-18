@@ -1,0 +1,47 @@
+/* ==========================================================================
+ * Flavor Theme — Search Page
+ * ========================================================================== */
+
+.flavor-search {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+}
+
+.flavor-search__form {
+    max-width: 36rem;
+    margin-bottom: var(--space-8);
+}
+
+.flavor-search__input-group {
+    display: flex;
+    gap: var(--space-2);
+
+    & .flavor-input {
+        flex: 1;
+    }
+}
+
+.flavor-search__filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+@media (min-width: 40rem) {
+    .flavor-search__filters {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.flavor-search__results {
+    margin-top: var(--space-8);
+}
+
+.flavor-search__result-count {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-6);
+}

@@ -1,0 +1,515 @@
+/* ==========================================================================
+ * Flavor Theme — Auth Pages (Login, Register, Lost Password)
+ * Bio-Digital Minimalism 2026
+ * ========================================================================== */
+
+/* ── Full-screen Auth Wrapper ────────────────────────────────────────────── */
+
+.flavor-auth {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8) var(--space-6);
+    background: var(--surface-base);
+}
+
+/* ── Auth Back Button ────────────────────────────────────────────────────── */
+
+.flavor-auth__back {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: var(--space-4);
+    transition: color var(--duration-fast) var(--ease-in-out);
+}
+
+.flavor-auth__back:hover {
+    color: var(--text-primary);
+}
+
+.flavor-auth__back svg {
+    transition: transform var(--duration-fast) var(--ease-in-out);
+}
+
+.flavor-auth__back:hover svg {
+    transform: translateX(-4px);
+}
+
+/* ── Auth Card ───────────────────────────────────────────────────────────── */
+
+.flavor-auth__card {
+    width: 100%;
+    max-width: 28rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    box-shadow: var(--shadow-lg);
+}
+
+.flavor-auth__card--wide {
+    max-width: 36rem;
+}
+
+/* ── Auth Icon ───────────────────────────────────────────────────────────── */
+
+.flavor-auth__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: var(--radius-xl);
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin: 0 auto var(--space-5);
+}
+
+.flavor-auth__icon--success {
+    background: hsla(142, 71%, 45%, 0.12);
+    color: hsl(142, 71%, 45%);
+}
+
+/* ── Auth Message Text ───────────────────────────────────────────────────── */
+
+.flavor-auth__message {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-2);
+}
+
+/* ── Auth Title & Subtitle ───────────────────────────────────────────────── */
+
+.flavor-auth__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-2);
+}
+
+.flavor-auth__subtitle {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-8);
+
+    & small {
+        font-size: var(--text-xs);
+        color: var(--text-tertiary);
+    }
+}
+
+/* ── Auth Footer ─────────────────────────────────────────────────────────── */
+
+.flavor-auth__footer {
+    text-align: center;
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+
+    & a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ── Auth Error ──────────────────────────────────────────────────────────── */
+
+.flavor-auth__error {
+    background: var(--danger-soft);
+    color: var(--danger);
+    border: 1px solid hsla(0, 72%, 51%, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    font-family: var(--font-ui);
+    margin-bottom: var(--space-5);
+}
+
+/* ── Flavor Fieldset (consent, reviewer) ─────────────────────────────────── */
+
+.flavor-auth__fieldset {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+    margin-top: var(--space-5);
+
+    & legend,
+    & .flavor-auth__fieldset-legend {
+        font-family: var(--font-ui);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--text-primary);
+        padding: 0 var(--space-2);
+    }
+}
+
+/* ── Required Field Indicator ────────────────────────────────────────────── */
+
+.flavor-label__required {
+    color: var(--danger);
+    margin-left: var(--space-1);
+}
+
+
+/* ==========================================================================
+ * OJS Default Registration Form Overrides
+ * Targets: registrationForm.tpl structure
+ *   <fieldset class="identity"> → Profile section
+ *   <fieldset class="login"> → Login credentials section
+ *   <span class="label"> → Label text
+ *   <span class="required"> → Required asterisk
+ *   <div class="fields"> → Field container
+ * ========================================================================== */
+
+.flavor-register-form {
+
+    /* ── All fieldsets (identity, login, consent, reviewer) ────────────── */
+
+    & fieldset {
+        border: none;
+        padding: 0;
+        margin: 0 0 var(--space-6);
+    }
+
+    /* ── Fieldset Legends (Profile, Login, etc.) ──────────────────────── */
+
+    & fieldset > legend {
+        font-family: var(--font-heading);
+        font-size: var(--text-lg);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: var(--space-4);
+        padding-bottom: var(--space-3);
+        border-bottom: 2px solid var(--accent);
+        display: block;
+        width: 100%;
+    }
+
+    /* ── .fields container ────────────────────────────────────────────── */
+
+    & .fields {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-5);
+    }
+
+    /* ── Label text (.label span inside <label>) ─────────────────────── */
+
+    & .fields .label {
+        display: block;
+        font-family: var(--font-ui);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--space-2);
+    }
+
+    /* ── Required asterisk ────────────────────────────────────────────── */
+
+    & .required {
+        color: var(--danger);
+        margin-left: 2px;
+    }
+
+    /* ── Screen reader text ───────────────────────────────────────────── */
+
+    & .pkp_screen_reader {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    /* ── All text inputs, selects, textareas ──────────────────────────── */
+
+    & input[type="text"],
+    & input[type="email"],
+    & input[type="password"],
+    & input[type="url"],
+    & input[type="tel"],
+    & select,
+    & textarea {
+        display: block;
+        width: 100%;
+        font-family: var(--font-ui);
+        font-size: var(--text-base);
+        color: var(--text-primary);
+        background: var(--surface-base);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        transition: border-color var(--duration-fast) var(--ease-in-out),
+                    box-shadow var(--duration-fast) var(--ease-in-out),
+                    background var(--duration-fast) var(--ease-in-out);
+        box-sizing: border-box;
+
+        &:hover {
+            background: var(--surface-elevated);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--surface-elevated);
+            box-shadow: 0 0 0 3px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.15);
+        }
+
+        &::placeholder {
+            color: var(--text-tertiary);
+        }
+    }
+
+    & select {
+        cursor: pointer;
+        appearance: auto;
+    }
+
+    /* ── Checkbox groups (privacy, email consent, reviewer) ───────────── */
+
+    & .flavor-checkbox-group {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-3);
+
+        & input[type="checkbox"] {
+            margin-top: 0.25em;
+            accent-color: var(--accent);
+            width: 1.125rem;
+            height: 1.125rem;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        & label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            cursor: pointer;
+
+            & a {
+                color: var(--accent);
+                text-decoration: none;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    /* ── OJS Password Strength Meter ─────────────────────────────────── */
+    /* OJS injects a password strength indicator widget with
+       <span class="password-suggestion"> and related elements */
+
+    & .password-suggestion,
+    & .pkp_form_password_strength {
+        margin-top: var(--space-2);
+        font-size: var(--text-xs);
+        color: var(--text-tertiary);
+    }
+
+    /* Hide the ugly default password reveal toggle */
+    & input[type="password"]::-ms-reveal,
+    & input[type="password"]::-ms-clear {
+        display: none;
+    }
+
+    /* ── Error messages ───────────────────────────────────────────────── */
+
+    & .pkp_form_error,
+    & .error,
+    & .form_error {
+        background: var(--danger-soft);
+        color: var(--danger);
+        border: 1px solid hsla(0, 72%, 51%, 0.2);
+        border-radius: var(--radius-lg);
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-sm);
+        font-family: var(--font-ui);
+        margin-bottom: var(--space-5);
+    }
+
+    /* Error list styling */
+    & ul.pkp_form_error_list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 var(--space-5);
+
+        & li {
+            background: var(--danger-soft);
+            color: var(--danger);
+            border-radius: var(--radius-md);
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-2);
+        }
+    }
+}
+
+
+/* ==========================================================================
+ * Login Form Overrides (.flavor-auth__card context)
+ * Targets: userLogin.tpl specific selectors
+ * ========================================================================== */
+
+.flavor-auth__card {
+
+    & .flavor-form-group {
+        margin-bottom: var(--space-5);
+    }
+
+    & .flavor-label {
+        display: block;
+        font-family: var(--font-ui);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--space-2);
+    }
+
+    & .flavor-input {
+        display: block;
+        width: 100%;
+        font-family: var(--font-ui);
+        font-size: var(--text-base);
+        color: var(--text-primary);
+        background: var(--surface-base);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        box-sizing: border-box;
+        transition: border-color var(--duration-fast) var(--ease-in-out),
+                    box-shadow var(--duration-fast) var(--ease-in-out),
+                    background var(--duration-fast) var(--ease-in-out);
+
+        &:hover {
+            background: var(--surface-elevated);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--surface-elevated);
+            box-shadow: 0 0 0 4px hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.15);
+        }
+
+        &::placeholder {
+            color: var(--text-tertiary);
+        }
+    }
+
+    /* Checkbox group in login (remember me) */
+    & .flavor-checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+
+        & input[type="checkbox"] {
+            accent-color: var(--accent);
+            width: 1.125rem;
+            height: 1.125rem;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        & label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+    }
+
+    /* Form actions (buttons) */
+    & .flavor-form-actions {
+        margin-top: var(--space-6);
+    }
+}
+
+
+/* ==========================================================================
+ * Flavor Buttons inside auth context
+ * ========================================================================== */
+
+.flavor-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-in-out);
+    white-space: nowrap;
+    text-decoration: none;
+    border: none;
+}
+
+.flavor-btn--primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: var(--shadow-sm), var(--shadow-glow);
+
+    &:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md), var(--shadow-glow);
+    }
+}
+
+.flavor-btn--secondary {
+    background: var(--surface-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xs);
+
+    &:hover {
+        background: var(--surface-base);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+.flavor-btn--sm {
+    font-size: var(--text-xs);
+    padding: var(--space-2) var(--space-4);
+}
+
+
+/* ==========================================================================
+ * Pagination for Archive
+ * ========================================================================== */
+
+.flavor-archive__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+}

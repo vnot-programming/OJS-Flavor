@@ -1,0 +1,98 @@
+/* ==========================================================================
+ * Flavor Theme — Site Portal Page
+ * ========================================================================== */
+
+/* ── Portal Hero (Site Name Banner) ───────────────────────────────────────── */
+
+.flavor-hero--portal {
+    text-align: center;
+    padding: var(--space-16) var(--space-6) var(--space-12);
+}
+
+.flavor-site-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.flavor-site-name__link {
+    color: var(--text-hero-primary);
+    text-decoration: none;
+    transition: opacity var(--duration-fast) var(--ease-in-out);
+
+    &:hover {
+        opacity: 0.85;
+        color: var(--text-hero-primary);
+    }
+}
+
+/* ── Portal Title Prefix ("Portal | Site Name") ──────────────────────────── */
+
+.flavor-hero__prefix {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading);
+    /* opacity: 0.85; */
+    /* letter-spacing: 0.08em; */
+    /* text-transform: uppercase; */
+    font-size: var(--font-heading);
+    vertical-align: baseline;
+    /* margin-right: 0.3em; */
+}
+
+.flavor-hero__separator {
+    opacity: 0.3;
+    font-weight: 300;
+    margin: 0 0.15em;
+    font-size: 0.6em;
+    vertical-align: middle;
+}
+
+.flavor-hero--portal .flavor-hero__description {
+    text-align: center;
+    max-width: 48ch;
+}
+
+/* ── Portal Content ───────────────────────────────────────────────────────── */
+
+.flavor-page-portal {
+    background: var(--surface-hero);
+    padding: 0 var(--space-6) var(--space-20);
+
+    /* Center the content blocks */
+    &>* {
+        max-width: var(--content-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & .flavor-page-portal__about {
+        max-width: var(--prose-width);
+        margin-bottom: var(--space-10);
+        color: var(--text-secondary);
+        line-height: var(--leading-relaxed);
+    }
+
+    & .flavor-page-portal__heading {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-8);
+    }
+
+    & .flavor-page-portal__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+}
+
+@media (min-width: 48rem) {
+    .flavor-page-portal__grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (min-width: 72rem) {
+    .flavor-page-portal__grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}

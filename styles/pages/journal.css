@@ -1,0 +1,92 @@
+/* ==========================================================================
+ * Flavor Theme — Journal Homepage
+ * Hero section with CSS gradient mesh.
+ * ========================================================================== */
+
+/* ── Hero Section ─────────────────────────────────────────────────────────── */
+
+.flavor-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-hero);
+    padding: var(--space-16) var(--space-6);
+}
+
+.flavor-hero__bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.25;
+    background: 
+        radial-gradient(ellipse 80% 50% at 20% 40%, hsl(var(--accent-h), 70%, 55%), transparent),
+        radial-gradient(ellipse 60% 60% at 80% 20%, hsl(calc(var(--accent-h) + 40), 60%, 45%), transparent),
+        radial-gradient(ellipse 50% 80% at 50% 90%, hsl(calc(var(--accent-h) - 30), 50%, 35%), transparent);
+    filter: blur(40px);
+}
+
+.flavor-hero--image {
+    & .flavor-hero__bg {
+        opacity: 0.5;
+        background-size: cover;
+        background-position: center;
+        filter: blur(2px);
+    }
+}
+
+.flavor-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.flavor-hero__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    color: var(--text-hero-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+}
+
+.flavor-hero__description {
+    font-family: var(--font-body);
+    font-size: var(--text-xl);
+    color: var(--text-hero-secondary);
+    max-width: 40ch;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.flavor-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+/* ── Journal Content Section ──────────────────────────────────────────────── */
+
+.flavor-journal-content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+}
+
+.flavor-section {
+    margin-bottom: var(--space-12);
+
+    & .flavor-section__heading {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-2);
+    }
+
+    & .flavor-section__subheading {
+        font-size: var(--text-base);
+        color: var(--text-secondary);
+        margin-bottom: var(--space-6);
+    }
+}

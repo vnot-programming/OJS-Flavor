@@ -1,0 +1,155 @@
+/* ==========================================================================
+ * Flavor Theme — Typography System
+ * Fluid, hierarchical, optimized for long-form academic reading.
+ * ========================================================================== */
+
+/* ── Heading Hierarchy ────────────────────────────────────────────────────── */
+
+h1 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+h5, h6 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+/* ── Body Text ────────────────────────────────────────────────────────────── */
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* Prose container — optimal reading width for academic content */
+.flavor-prose {
+    max-width: var(--prose-width);
+
+    & p {
+        margin-bottom: var(--space-5);
+    }
+
+    & h2 {
+        margin-top: var(--space-10);
+    }
+
+    & h3 {
+        margin-top: var(--space-8);
+    }
+
+    & a {
+        font-weight: 500;
+        text-decoration: underline;
+        text-decoration-color: hsl(var(--accent-h), var(--accent-s), 75%);
+        text-underline-offset: 2px;
+        transition: text-decoration-color var(--duration-fast) var(--ease-in-out);
+
+        &:hover {
+            text-decoration-color: var(--accent);
+        }
+    }
+
+    & ul, & ol {
+        padding-left: var(--space-6);
+        margin-bottom: var(--space-5);
+    }
+
+    & ul {
+        list-style: disc;
+    }
+
+    & ol {
+        list-style: decimal;
+    }
+
+    & li {
+        margin-bottom: var(--space-2);
+        line-height: var(--leading-relaxed);
+        color: var(--text-secondary);
+    }
+
+    & blockquote {
+        border-left: 3px solid var(--accent);
+        padding-left: var(--space-5);
+        margin: var(--space-6) 0;
+        font-style: italic;
+        color: var(--text-secondary);
+    }
+
+    & img {
+        border-radius: var(--radius-lg);
+        margin: var(--space-6) 0;
+    }
+}
+
+/* ── Utility Type Classes ─────────────────────────────────────────────────── */
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-accent { color: var(--accent); }
+
+.font-heading { font-family: var(--font-heading); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+.font-ui { font-family: var(--font-ui); }
+
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+/* ── Metadata / DOI / Technical Text ──────────────────────────────────────── */
+
+.meta-text {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    letter-spacing: -0.01em;
+}
+
+.label-text {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+}

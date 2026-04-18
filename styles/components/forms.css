@@ -1,0 +1,66 @@
+/* ==========================================================================
+ * Flavor Theme — Forms
+ * ========================================================================== */
+
+.flavor-input,
+.flavor-select,
+.flavor-textarea {
+    display: block;
+    width: 100%;
+    font-family: var(--font-ui);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    transition: border-color var(--duration-fast) var(--ease-in-out),
+                box-shadow var(--duration-fast) var(--ease-in-out);
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.15);
+    }
+
+    &::placeholder {
+        color: var(--text-tertiary);
+    }
+}
+
+.flavor-textarea {
+    min-height: 6rem;
+    resize: vertical;
+}
+
+.flavor-label {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.flavor-form-group {
+    margin-bottom: var(--space-5);
+}
+
+.flavor-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+
+    & input[type="checkbox"] {
+        margin-top: 0.15em;
+        accent-color: var(--accent);
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.flavor-form-actions {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}

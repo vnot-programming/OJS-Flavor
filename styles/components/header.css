@@ -1,0 +1,174 @@
+/* ==========================================================================
+ * Flavor Theme — Header Component
+ * Glassmorphism sticky header with Bio-Digital aesthetics.
+ * ========================================================================== */
+
+.flavor-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    height: var(--header-height);
+    padding: 0 var(--space-6);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border);
+    transition: background var(--duration-slow) var(--ease-in-out),
+                border-color var(--duration-slow) var(--ease-in-out);
+}
+
+.flavor-header__left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+    min-width: 0;
+}
+
+.flavor-header__center {
+    display: none;
+}
+
+.flavor-header__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+/* Logo */
+.flavor-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    & img {
+        height: 2.25rem;
+        width: auto;
+        object-fit: contain;
+    }
+}
+
+/* Search button */
+.flavor-header__search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: all var(--duration-fast) var(--ease-in-out);
+    box-shadow: var(--shadow-sm);
+
+    & svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &:hover {
+        color: var(--text-primary);
+        border-color: var(--border-strong);
+    }
+}
+
+/* Mobile hamburger */
+.flavor-header__hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--text-secondary);
+    border-radius: var(--radius-lg);
+
+    & svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+/* ── Mobile Slide Panel ───────────────────────────────────────────────────── */
+
+.flavor-mobile-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    background: hsla(0, 0%, 0%, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.flavor-mobile-panel.is-open {
+    display: block;
+    animation: flavor-fade-in var(--duration-normal) var(--ease-out);
+}
+
+.flavor-mobile-panel__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(20rem, 85vw);
+    background: var(--surface-elevated);
+    padding: var(--space-6);
+    overflow-y: auto;
+    animation: flavor-slide-in-left var(--duration-normal) var(--ease-out);
+}
+
+.flavor-mobile-panel__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+
+    & svg {
+        width: 1rem;
+        height: 1rem;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+/* ── Desktop nav visibility ───────────────────────────────────────────────── */
+
+@media (min-width: 64rem) {
+    .flavor-header__hamburger {
+        display: none;
+    }
+
+    .flavor-header__center {
+        display: flex;
+    }
+}

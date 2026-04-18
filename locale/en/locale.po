@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-14T00:00:00+00:00\n"
+"PO-Revision-Date: 2026-04-14T00:00:00+00:00\n"
+"Language: en\n"
+
+msgid "plugins.themes.flavor.name"
+msgstr "Flavor Theme"
+
+msgid "plugins.themes.flavor.description"
+msgstr "A premium Bio-Digital Minimalism theme for OJS 3.5+. Designed for academic journals with circadian-sync interfaces, fluid typography, and human-centric aesthetics."
+
+msgid "plugins.themes.flavor.option.accentColor.label"
+msgstr "Accent Color"
+
+msgid "plugins.themes.flavor.option.accentColor.description"
+msgstr "Choose the primary accent color for links and interactive elements."
+
+msgid "plugins.themes.flavor.option.showDescriptionInJournalIndex.option"
+msgstr "Show the journal summary on the homepage hero section."
+
+msgid "plugins.themes.flavor.option.useHomepageImageAsHeader.label"
+msgstr "Hero Background Image"
+
+msgid "plugins.themes.flavor.option.useHomepageImageAsHeader.description"
+msgstr "Use the homepage image as the hero section background instead of the default gradient."
+
+msgid "plugins.themes.flavor.option.useHomepageImageAsHeader.option"
+msgstr "Show homepage image as hero background."
+
+msgid "plugins.themes.flavor.makeSubmission"
+msgstr "Submit Article"
+
+msgid "plugins.themes.flavor.browseArchives"
+msgstr "Browse Archives"
+
+msgid "plugins.themes.flavor.currentIssue"
+msgstr "Latest Issue"
+
+msgid "plugins.themes.flavor.poweredBy"
+msgstr "Powered by"
+
+msgid "plugins.themes.flavor.designedBy"
+msgstr "Theme: Flavor — Bio-Digital Minimalism"
+
+msgid "plugins.themes.flavor.login.subtitle"
+msgstr "Sign in to access your account and manage submissions."
+
+msgid "plugins.themes.flavor.register.subtitle"
+msgstr "Create an account to submit and review manuscripts."
+
+msgid "plugins.themes.flavor.register.alreadyHaveAccount"
+msgstr "Already have an account?"
+
+msgid "plugins.themes.flavor.lostPassword.subtitle"
+msgstr "Enter your email address and we'll send you instructions to reset your password."

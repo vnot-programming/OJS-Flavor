@@ -1,0 +1,100 @@
+/* ==========================================================================
+ * Flavor Theme — Main Stylesheet Entry Point
+ * Bio-Digital Minimalism 2026
+ *
+ * Zero build step. Pure vanilla CSS.
+ * All visual decisions flow from core/variables.css.
+ * ========================================================================== */
+
+/* ── Core: Design System Foundation ───────────────────────────────────────── */
+@import url('core/variables.css?v=3.5.0.4');
+@import url('core/reset.css?v=3.5.0.4');
+@import url('core/typography.css?v=3.5.0.4');
+@import url('core/animations.css?v=3.5.0.4');
+
+/* ── Components ───────────────────────────────────────────────────────────── */
+@import url('components/header.css?v=3.5.0.4');
+@import url('components/footer.css?v=3.5.0.4');
+@import url('components/cards.css?v=3.5.0.4');
+@import url('components/buttons.css?v=3.5.0.4');
+@import url('components/forms.css?v=3.5.0.4');
+@import url('components/navigation.css?v=3.5.0.4');
+@import url('components/badges.css?v=3.5.0.4');
+@import url('components/sidebar.css?v=3.5.0.4');
+
+/* ── Pages ────────────────────────────────────────────────────────────────── */
+@import url('pages/index.css?v=3.5.0.4');
+@import url('pages/journal.css?v=3.5.0.4');
+@import url('pages/article.css?v=3.5.0.4');
+@import url('pages/issue.css?v=3.5.0.4');
+@import url('pages/search.css?v=3.5.0.4');
+@import url('pages/auth.css?v=3.5.0.4');
+@import url('pages/about.css?v=3.5.0.4');
+
+/* ── Utility: Screen Reader Only ──────────────────────────────────────────── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ── Utility: Layout Helpers ──────────────────────────────────────────────── */
+.flavor-container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.flavor-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    width: 100%;
+}
+
+@media (min-width: 64rem) {
+    .flavor-layout {
+        grid-template-columns: 1fr var(--sidebar-width);
+        gap: var(--space-12);
+        align-items: start;
+    }
+}
+
+.flavor-layout__content {
+    min-width: 0; /* Prevents overflow in flex/grid children */
+}
+
+.flavor-layout__sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-8));
+}
+
+.flavor-flex {
+    display: flex;
+}
+
+.flavor-grid {
+    display: grid;
+}
+
+/* ── Hide on Desktop / Hide on Mobile ─────────────────────────────────────── */
+.flavor-hide-mobile {
+    display: none;
+}
+
+@media (min-width: 40rem) {
+    .flavor-hide-mobile {
+        display: initial;
+    }
+    .flavor-hide-desktop {
+        display: none;
+    }
+}

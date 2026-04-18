@@ -1,0 +1,333 @@
+/* ==========================================================================
+ * Flavor Theme — Issue Pages (Current Issue, TOC & Archive)
+ * Bio-Digital Minimalism 2026
+ * ========================================================================== */
+
+/* ── Page Layout ──────────────────────────────────────────────────────────── */
+
+.flavor-page-issue {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6) var(--space-16);
+}
+
+/* ── Breadcrumbs Refinement ───────────────────────────────────────────────── */
+
+.flavor-breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-6);
+
+    & a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color var(--duration-fast) var(--ease-in-out);
+
+        &:hover {
+            color: var(--accent-hover);
+        }
+    }
+
+    & .flavor-breadcrumbs__separator {
+        display: inline-flex;
+        align-items: center;
+        color: var(--text-tertiary);
+        opacity: 0.5;
+    }
+
+    & .flavor-breadcrumbs__current {
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+}
+
+/* ── Empty State (No Current Issue) ───────────────────────────────────────── */
+
+.flavor-page-issue__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 40vh;
+    padding: var(--space-16) var(--space-6);
+    gap: var(--space-4);
+}
+
+.flavor-page-issue__empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: var(--radius-full);
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-bottom: var(--space-2);
+}
+
+.flavor-page-issue__empty-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.flavor-page-issue__empty-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 40ch;
+    line-height: var(--leading-relaxed);
+}
+
+/* ── Issue Header ─────────────────────────────────────────────────────────── */
+
+.flavor-page-issue__header {
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--border);
+}
+
+.flavor-page-issue__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-3);
+}
+
+.flavor-page-issue__meta {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+
+    & time {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-1);
+    }
+}
+
+/* ── Issue Intro (Cover + Description) ────────────────────────────────────── */
+
+.flavor-page-issue__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+    padding: var(--space-6);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 48rem) {
+    .flavor-page-issue__intro {
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.flavor-page-issue__cover {
+    & img {
+        max-width: 14rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+}
+
+.flavor-page-issue__description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    max-width: var(--prose-width);
+}
+
+/* ── Full-issue Galleys ───────────────────────────────────────────────────── */
+
+.flavor-page-issue__galleys {
+    margin-bottom: var(--space-10);
+    padding: var(--space-5);
+    background: var(--accent-soft);
+    border-radius: var(--radius-lg);
+}
+
+.flavor-page-issue__galleys-label {
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: var(--space-3);
+}
+
+.flavor-page-issue__galleys-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+/* ── Section (Article Group) ──────────────────────────────────────────────── */
+
+.flavor-page-issue__section {
+    margin-bottom: var(--space-10);
+}
+
+.flavor-page-issue__section-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--accent);
+}
+
+.flavor-page-issue__section-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.flavor-page-issue__section-count {
+    font-family: var(--font-ui);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+/* ── Article Items within Section ─────────────────────────────────────────── */
+
+.flavor-page-issue__articles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+/* ── Notification / Notice Component ──────────────────────────────────────── */
+
+.flavor-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-6);
+}
+
+.flavor-notice--info {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid hsl(var(--accent-h), var(--accent-s), 80%);
+}
+
+.flavor-notice--warning {
+    background: var(--warning-soft);
+    color: hsl(38, 70%, 35%);
+    border: 1px solid hsl(38, 60%, 80%);
+}
+
+.dark .flavor-notice--warning {
+    color: hsl(38, 80%, 70%);
+    border-color: hsl(38, 40%, 25%);
+}
+
+.flavor-notice__icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.flavor-notice__content {
+    flex: 1;
+}
+
+/* ── Archive Grid (Override for cleanliness) ──────────────────────────────── */
+
+.flavor-archive {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6) var(--space-16);
+}
+
+.flavor-archive__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 40rem) {
+    .flavor-archive__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64rem) {
+    .flavor-archive__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Issue card in archive */
+.flavor-issue-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--duration-normal) var(--ease-out);
+
+    &:hover {
+        box-shadow: var(--shadow-lg), var(--shadow-glow);
+        transform: translateY(-4px);
+        border-color: var(--border-strong);
+    }
+
+    & .flavor-issue-card__cover img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+    }
+
+    & .flavor-issue-card__body {
+        padding: var(--space-5);
+    }
+
+    & .flavor-issue-card__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-base);
+        font-weight: 600;
+        color: var(--text-primary);
+
+        & a {
+            color: inherit;
+            text-decoration: none;
+            &:hover { color: var(--accent); }
+        }
+    }
+
+    & .flavor-issue-card__date {
+        font-family: var(--font-ui);
+        font-size: var(--text-xs);
+        color: var(--text-tertiary);
+        margin-top: var(--space-2);
+    }
+}

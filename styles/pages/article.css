@@ -1,0 +1,139 @@
+/* ==========================================================================
+ * Flavor Theme — Article Detail Page
+ * Definition-list layout for metadata.
+ * ========================================================================== */
+
+.flavor-article {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6);
+}
+
+.flavor-article__title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.flavor-article__subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+/* Metadata grid (definition list) */
+.flavor-article__meta {
+    border-top: 1px solid var(--border);
+
+    & .flavor-article__meta-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+        padding: var(--space-6) 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    & .flavor-article__meta-label {
+        font-family: var(--font-ui);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    & .flavor-article__meta-value {
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: var(--leading-relaxed);
+    }
+}
+
+@media (min-width: 40rem) {
+    .flavor-article__meta-row {
+        grid-template-columns: 12rem 1fr !important;
+        gap: var(--space-6) !important;
+    }
+}
+
+/* Author list */
+.flavor-author-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.flavor-author {
+    & .flavor-author__name {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: var(--text-sm);
+    }
+
+    & .flavor-author__affiliation {
+        font-size: var(--text-sm);
+        color: var(--text-tertiary);
+        margin-top: var(--space-1);
+    }
+
+    & .flavor-author__orcid {
+        font-family: var(--font-mono);
+        font-size: var(--text-xs);
+        color: var(--accent);
+        margin-top: var(--space-1);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-1);
+    }
+
+    & .flavor-author__role {
+        margin-top: var(--space-1);
+    }
+}
+
+/* Abstract */
+.flavor-article__abstract {
+    max-width: var(--prose-width);
+    line-height: var(--leading-relaxed);
+}
+
+/* References */
+.flavor-article__references {
+    & p {
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: var(--leading-relaxed);
+        margin-bottom: var(--space-3);
+        padding-left: var(--space-4);
+        text-indent: calc(-1 * var(--space-4));
+    }
+}
+
+/* Galleys download */
+.flavor-article__galleys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+/* Preview notice */
+.flavor-notice {
+    background: var(--warning-soft);
+    color: hsl(38, 80%, 30%);
+    border: 1px solid hsla(38, 92%, 50%, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-5);
+    font-family: var(--font-ui);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+}
+
+.dark .flavor-notice {
+    color: hsl(38, 80%, 70%);
+}
+
+/* Hook content area */
+.flavor-article__extra {
+    background: var(--surface-base);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    margin-top: var(--space-8);
+}

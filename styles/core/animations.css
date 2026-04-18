@@ -1,0 +1,62 @@
+/* ==========================================================================
+ * Flavor Theme — Micro-Animations
+ * Subtle, purposeful motion. Performance-safe (transform/opacity only).
+ * ========================================================================== */
+
+@keyframes flavor-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes flavor-slide-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flavor-slide-down {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flavor-slide-in-left {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flavor-slide-out-left {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-100%); }
+}
+
+@keyframes flavor-scale-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes flavor-pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ── Animation utility classes ────────────────────────────────────────────── */
+
+.animate-fade-in {
+    animation: flavor-fade-in var(--duration-normal) var(--ease-out) both;
+}
+
+.animate-slide-up {
+    animation: flavor-slide-up var(--duration-normal) var(--ease-out) both;
+}
+
+.animate-slide-down {
+    animation: flavor-slide-down var(--duration-normal) var(--ease-out) both;
+}
